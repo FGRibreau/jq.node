@@ -33,7 +33,7 @@ npm install jq.node -g
 ## Usage
 
 ```shell
-# the above 4 commands do the same thing
+# the below 4 commands do the same thing
 cat users.json | jq 'filter(has("email")) | groupBy(function(u){return u.email.split("@")[1]}) | csv'
 cat users.json | jq 'filter(has("email")) | groupBy(u => u.email.split("@")[1]) | csv'
 cat users.json | jq 'filter(has("email")) | groupBy(u => last(u.email.split("@"))) | csv'
