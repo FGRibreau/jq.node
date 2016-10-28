@@ -1,0 +1,58 @@
+{
+  "name": "jq.js",
+  "version": "0.0.1",
+  "author": "Francois-Guillaume Ribreau <npm@fgribreau.com> (http://fgribreau.com/)",
+  "engines": {
+    "node": "6"
+  },
+  "nyc": {
+    "exclude": [
+      "node_modules",
+      "dist",
+      "coverage",
+      "webpack.config.js",
+      "**/**.test.js"
+    ]
+  },
+  "bin": {
+    "jq": "./jq"
+  },
+  "scripts": {
+    "test": "mocha $(find src -name '*.test.js')",
+    "test-watch": "mocha -w $(find src -name '*.test.js')",
+    "test-coverage": "nyc --all --statements=100 --lines=100 --functions=90 --branches=70 --check-coverage --reporter=lcov --reporter=cobertura --report-dir=coverage -- mocha -R spec -t 100000 $(find src -name '*.test.js')",
+    "send-coverage": "cat ./coverage/lcov.info | coveralls",
+    "update": "updtr",
+    "changelog": "conventional-changelog -i CHANGELOG.md -s -r 0",
+    "changelog-git": "npm run changelog && git add CHANGELOG.md && git commit -m 'docs(changelog): updated' && git push origin master"
+  },
+  "main": "jq2.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fgribreau/jq2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fgribreau/jq2/issues"
+  },
+  "homepage": "https://github.com/fgribreau/jq2",
+  "keywords": [
+    "jq",
+    "json",
+    "cli"
+  ],
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "conventional-changelog": "^1.1.0",
+    "conventional-changelog-cli": "^1.2.0",
+    "coveralls": "^2.11.12",
+    "mocha": "^3.0.1",
+    "sinon": "^1.17.5",
+    "nyc": "^8.1.0",
+    "updtr": "^0.2.1"
+  },
+  "dependencies": {
+    "json2csv": "^3.7.1",
+    "lodash": "^4.16.4"
+  },
+  "license": "MIT"
+}
