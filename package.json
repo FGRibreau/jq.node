@@ -1,5 +1,5 @@
 {
-  "name": "jq.js",
+  "name": "jq.node",
   "version": "0.0.1",
   "author": "Francois-Guillaume Ribreau <npm@fgribreau.com> (http://fgribreau.com/)",
   "engines": {

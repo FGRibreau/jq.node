@@ -1,28 +1,28 @@
-### jq.js - Command-line JSON processor
+### jq.node - Command-line JSON processor
 
-![deps](https://img.shields.io/david/fgribreau/jq.js.svg?style=flat) ![Version](https://img.shields.io/npm/v/jq.js.svg?style=flat)  [![available-for-advisory](https://img.shields.io/badge/available%20for%20consulting%20advisory-yes-ff69b4.svg?)](http://bit.ly/2c7uFJq) ![extra](https://img.shields.io/badge/actively%20maintained-yes-ff69b4.svg) [![Twitter Follow](https://img.shields.io/twitter/follow/fgribreau.svg?style=flat)](https://twitter.com/FGRibreau)
+![deps](https://img.shields.io/david/fgribreau/jq.node.svg?style=flat) ![Version](https://img.shields.io/npm/v/jq.node.svg?style=flat)  [![available-for-advisory](https://img.shields.io/badge/available%20for%20consulting%20advisory-yes-ff69b4.svg?)](http://bit.ly/2c7uFJq) ![extra](https://img.shields.io/badge/actively%20maintained-yes-ff69b4.svg) [![Twitter Follow](https://img.shields.io/twitter/follow/fgribreau.svg?style=flat)](https://twitter.com/FGRibreau)
 
 ## Rational
 
 I'm a huge fan of [jq](https://github.com/stedolan/jq) **but** it was so many times inconsistent and irritating. It sometimes felt like JavaScript but it was not.
-**jq.js** is what jq should be **in my opinion**. First version was written in 25 lines of JavaScript code and was already way more powerful than jq, backed from day one by more than 300 helpers from Lodash FP.
+**jq.node** is what jq should be **in my opinion**. First version was written in 25 lines of JavaScript code and was already way more powerful than jq, backed from day one by more than 300 helpers from Lodash FP.
 
-## Why jq.js? Why not jq?
+## Why jq.node? Why not jq?
 
-- jq.js does not try to implement its own expression language, it's pure JavaScript
-- no need to learn new operators or helpers, if you know [Lodash/FP](https://lodash.com), you know jq.js helpers
+- jq.node does not try to implement its own expression language, it's pure JavaScript
+- no need to learn new operators or helpers, if you know [Lodash/FP](https://lodash.com), you know jq.node helpers
 - more powerful than jq **will ever be** `jq 'filter(has("email")) | groupBy(u => u.email.split("@")[1]) | csv'``
 
-## Why jq? Why not jq.js?
+## Why jq? Why not jq.node?
 
-- performance matters more than feature set (in our current implementation jq is faster than jq.js, C vs JavaScript)
-- some features of jq are not currently implemented in jq.js
-- jq is a binary, jq.js is a NodeJS proejct (🌟 soon accessible through a docker image)
+- performance matters more than feature set (in our current implementation jq is faster than jq.node, C vs JavaScript)
+- some features of jq are not currently implemented in jq.node
+- jq is a binary, jq.node is a NodeJS proejct (🌟 soon accessible through a docker image)
 
 ## Install (NodeJS)
 
 ```
-npm install jq.js -g
+npm install jq.node -g
 ```
 
 ## Shameless plug
@@ -48,7 +48,7 @@ cat users.json | jq 'filter(has("email")) | groupBy(flow(get("email"), split("@"
 
 ## Performance
 
-- jq    `time sh -c "cat messages.json | jq '.[].type'"`              `2ms user 0.01s system 95% cpu 0.028 total`
-- jq.js `time sh -c "cat messages.json | jq 'map(\"type\")'"`         `170ms user 0.03s system 108% cpu 0.181 total`
+- jq      `time sh -c "cat messages.json | jq '.[].type'"`              `2ms user 0.01s system 95% cpu 0.028 total`
+- jq.node `time sh -c "cat messages.json | jq 'map(\"type\")'"`         `170ms user 0.03s system 108% cpu 0.181 total`
 
 ## [Changelog](/CHANGELOG.md)
