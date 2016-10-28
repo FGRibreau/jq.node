@@ -26,15 +26,15 @@
     "changelog": "conventional-changelog -i CHANGELOG.md -s -r 0",
     "changelog-git": "npm run changelog && git add CHANGELOG.md && git commit -m 'docs(changelog): updated' && git push origin master"
   },
-  "main": "jq2.js",
+  "main": "jq.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/fgribreau/jq2.git"
+    "url": "git://github.com/fgribreau/jq.node.git"
   },
   "bugs": {
-    "url": "https://github.com/fgribreau/jq2/issues"
+    "url": "https://github.com/fgribreau/jq.node/issues"
   },
-  "homepage": "https://github.com/fgribreau/jq2",
+  "homepage": "https://github.com/fgribreau/jq.node",
   "keywords": [
     "jq",
     "json",

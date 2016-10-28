@@ -1,3 +1,3 @@
 #!/usr/bin/env node
 
-require('./jq2');
+require('./jq');
