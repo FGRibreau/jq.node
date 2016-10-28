@@ -10,8 +10,8 @@ I'm a huge fan of [jq](https://github.com/stedolan/jq) **but** it was so many ti
 ## Why jq.node? Why not jq?
 
 - jq.node does not try to implement its own expression language, it's pure JavaScript
-- no need to learn new operators or helpers, if you know [Lodash/FP](https://lodash.com), you know jq.node helpers
-- more powerful than jq **will ever be** `jq 'filter(has("email")) | groupBy(u => u.email.split("@")[1]) | csv'``
+- no need to learn new operators or helpers, if you know [lodash/fp](https://github.com/lodash/lodash/wiki/FP-Guide), you know jq.node helpers
+- more powerful than jq **will ever be** `jq 'filter(has("email")) | groupBy(u => u.email.split("@")[1]) | csv'`
 
 ## Why jq? Why not jq.node?
 
