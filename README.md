@@ -17,7 +17,7 @@ I'm a huge fan of [jq](https://github.com/stedolan/jq) **but** it was so many ti
 
 - performance matters more than feature set (in our current implementation jq is faster than jq.node, C vs JavaScript)
 - some features of jq are not currently implemented in jq.node
-- jq is a binary, jq.node is a NodeJS proejct (🌟 soon accessible through a docker image)
+- jq is a binary, jq.node is a NodeJS project (🌟 soon accessible through [a docker image](https://hub.docker.com/r/fgribreau/jq.node/))
 
 ## Install (NodeJS)
 
