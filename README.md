@@ -36,8 +36,8 @@ npm install jq.node -g
 # the 4 commands below do the same thing
 cat users.json | jq 'filter(has("email")) | groupBy(function(u){return u.email.split("@")[1]}) | csv'
 cat users.json | jq 'filter(has("email")) | groupBy(u => u.email.split("@")[1]) | csv'
-cat users.json | jq 'filter(has("email")) | groupBy(u => last(u.email.split("@"))) | csv'
-cat users.json | jq 'filter(has("email")) | groupBy(flow(get("email"), split("@"), last)) | csv'
+cat users.json | jq 'filter(has("email")) | groupBy(u => get(u.email.split("@"), 1)) | csv'
+cat users.json | jq 'filter(has("email")) | groupBy(flow(get("email"), split("@"), get(1))) | csv'
 ```
 
 ## Currently supported
@@ -50,5 +50,14 @@ cat users.json | jq 'filter(has("email")) | groupBy(flow(get("email"), split("@"
 
 - jq      `time sh -c "cat messages.json | jq '.[].type'"`              `2ms user 0.01s system 95% cpu 0.028 total`
 - jq.node `time sh -c "cat messages.json | jq 'map(\"type\")'"`         `170ms user 0.03s system 108% cpu 0.181 total`
+
+## Roadmap
+
+- [ ] Tests
+- [ ] Json-stream support
+- [ ] Optionally colorize output (while still JSON compatible)
+
+I accept pull-requests!
+
 
 ## [Changelog](/CHANGELOG.md)
