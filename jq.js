@@ -11,7 +11,7 @@ process.stdin.resume().on('data', function(buf) {
 }).on('end', function() {
   const sandbox = _;
   _.$$input$$ = JSON.parse(content);
-  const scriptStrWithPipes = process.argv.slice(2)[0];
+  const scriptStrWithPipes = args._[0];
   const scriptStr = (!scriptStrWithPipes || scriptStrWithPipes === '.'
     ? 'identity'
     : scriptStrWithPipes).replace(/\)\s*\|/g, '),');
@@ -19,7 +19,8 @@ process.stdin.resume().on('data', function(buf) {
   const script = new vm.Script(source);
   const context = new vm.createContext(sandbox);
   const result = script.runInContext(context);
-  console.log(_.isString(result)
-    ? result
-    : JSON.stringify(result, null, 2));
+  const output = args.json || !_.isString(result)
+    ? JSON.stringify(result, null, 2)
+    : result;
+  console.log(output);
 });
