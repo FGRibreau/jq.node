@@ -48,7 +48,7 @@ Display the help message and exit.
 
 ### -j, --json
 
-Force the result to be output as JSON. Without this, `jq.node` outputs strings verbatim and non-strings as JSON.
+Force the result to be output as JSON. Without this, `jq` outputs strings verbatim and non-strings as JSON.
 
 ### -v, --version
 
