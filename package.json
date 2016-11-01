@@ -15,7 +15,8 @@
     ]
   },
   "bin": {
-    "jq": "./jq"
+    "jq": "./jq",
+    "jq.node": "./jq"
   },
   "scripts": {
     "test": "mocha $(find src -name '*.test.js')",
