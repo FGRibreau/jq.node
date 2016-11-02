@@ -14,11 +14,18 @@ process.stdin.resume().on('data', function(buf) {
   const scriptStrWithPipes = args._[0];
   const scriptStr = (!scriptStrWithPipes || scriptStrWithPipes === '.'
     ? 'identity'
-    : scriptStrWithPipes).replace(/\)\s*\|/g, '),');
+    : scriptStrWithPipes).replace(/ \| /g, ',');
   const source = `flow(${scriptStr})($$input$$);`;
   const script = new vm.Script(source);
   const context = new vm.createContext(sandbox);
-  const result = script.runInContext(context);
+  let result;
+  try{
+    result = script.runInContext(context);
+  } catch(err){
+    console.error('[Invalid Expression] %s', source);
+    console.error(err);
+    process.exit(1);
+  }
   const output = args.json || !_.isString(result)
     ? JSON.stringify(result, null, 2)
     : result;

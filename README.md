@@ -40,7 +40,10 @@ cat users.json | jq 'filter(has("email")) | groupBy(u => get(u.email.split("@"),
 cat users.json | jq 'filter(has("email")) | groupBy(flow(get("email"), split("@"), get(1))) | csv'
 ```
 
-- [Asciinema](https://asciinema.org/a/dk9n2gruh4mp4br0n06gw121i)
+- [Demo on asciinema](https://asciinema.org/a/dk9n2gruh4mp4br0n06gw121i)
+
+Note: the pipe ` | ` **must always** be surrounded by space to be understood by `jq` as a pipe.
+
 
 ## Options
 
