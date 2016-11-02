@@ -40,6 +40,8 @@ cat users.json | jq 'filter(has("email")) | groupBy(u => get(u.email.split("@"),
 cat users.json | jq 'filter(has("email")) | groupBy(flow(get("email"), split("@"), get(1))) | csv'
 ```
 
+- [Asciinema](https://asciinema.org/a/dk9n2gruh4mp4br0n06gw121i)
+
 ## Options
 
 ### -h, --help
