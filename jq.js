@@ -10,7 +10,7 @@ process.stdin.resume().on('data', function(buf) {
   content += buf.toString();
 }).on('end', function() {
   const sandbox = _;
-  _.$$input$$ = JSON.parse(content);
+  _.$$input$$ = args.rawInput ? content : JSON.parse(content);
   const scriptStrWithPipes = args._[0];
   const scriptStr = (!scriptStrWithPipes || scriptStrWithPipes === '.'
     ? 'identity'

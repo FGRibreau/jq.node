@@ -5,6 +5,11 @@ const argv = require('yargs')
 .alias('h', 'help')
 .version()
 .alias('v', 'version')
+
+.boolean('raw-input')
+.alias('x', 'raw-input')
+.describe('raw-input', 'Read input as a string')
+
 .boolean('json')
 .alias('j', 'json')
 .describe('json', 'Force JSON output');

@@ -55,6 +55,10 @@ Display the help message and exit.
 
 Force the result to be output as JSON. Without this, `jq` outputs strings verbatim and non-strings as JSON.
 
+### -x, --raw-input
+
+Read input as a string.
+
 ### -v, --version
 
 Display the version and exit.
