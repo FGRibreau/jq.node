@@ -1,6 +1,8 @@
-### jq.node - Powerful Command-line JSON processor
+### jq.node - Become a shell hero, get super-power
 
 ![deps](https://img.shields.io/david/fgribreau/jq.node.svg?style=flat) ![Version](https://img.shields.io/npm/v/jq.node.svg?style=flat) [![Docker hub](https://img.shields.io/docker/pulls/fgribreau/jq.node.svg)](https://hub.docker.com/r/fgribreau/jq.node/) [![available-for-advisory](https://img.shields.io/badge/available%20for%20consulting%20advisory-yes-ff69b4.svg?)](http://bit.ly/2c7uFJq) ![extra](https://img.shields.io/badge/actively%20maintained-yes-ff69b4.svg) [![Twitter Follow](https://img.shields.io/twitter/follow/fgribreau.svg?style=flat)](https://twitter.com/FGRibreau)
+
+jq.node is JavaScript and Lodash in your shell. It's a powerful command-line JSON/string processor. It so good it feels like cheating.
 
 ## Rational
 
@@ -40,7 +42,8 @@ cat users.json | jq 'filter(has("email")) | groupBy(u => get(u.email.split("@"),
 cat users.json | jq 'filter(has("email")) | groupBy(flow(get("email"), split("@"), get(1))) | csv'
 ```
 
-- [Demo on asciinema](https://asciinema.org/a/dk9n2gruh4mp4br0n06gw121i)
+- [Complex and tricky JSON querying made easy with jq.node](https://asciinema.org/a/91627)
+- [Editing string (to JSON) in clipboard with jq.node](https://asciinema.org/a/91472)
 
 Note: the pipe ` | ` **must always** be surrounded by space to be understood by `jq` as a pipe.
 
