@@ -4,13 +4,16 @@ let content = '';
 const vm = require('vm');
 const args = require('./args');
 const _ = require('lodash/fp');
+const highlight = args.color ? require('cardinal').highlight : _.identity;
+const stripAnsi = require('strip-ansi');
 require('./mixins')(_);
 
 process.stdin.resume().on('data', function(buf) {
   content += buf.toString();
 }).on('end', function() {
   const sandbox = _;
-  _.$$input$$ = args.rawInput ? content : JSON.parse(content);
+  _.console = console;
+  _.$$input$$ = args.rawInput ? stripAnsi(content) : JSON.parse(stripAnsi(content));
   const scriptStrWithPipes = args._[0];
   const scriptStr = (!scriptStrWithPipes || scriptStrWithPipes === '.'
     ? 'identity'
@@ -27,7 +30,7 @@ process.stdin.resume().on('data', function(buf) {
     process.exit(1);
   }
   const output = args.json || !_.isString(result)
-    ? JSON.stringify(result, null, 2)
+    ? highlight(JSON.stringify(result, null, 2) || '')
     : result;
   console.log(output);
 });

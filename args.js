@@ -10,6 +10,11 @@ const argv = require('yargs')
 .alias('x', 'raw-input')
 .describe('raw-input', 'Read input as a string')
 
+.boolean('color')
+.alias('C', 'color')
+.describe('color', 'Colorize JSON (--color=false to disable)')
+.default('color', true)
+
 .boolean('json')
 .alias('j', 'json')
 .describe('json', 'Force JSON output');
