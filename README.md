@@ -62,7 +62,7 @@ Force the result to be output as JSON. Without this, `jq` outputs strings verbat
 
 Read input as a string.
 
-### -c, --json
+### -c, --color
 
 Colorize JSON (--color=false to disable it)
 
