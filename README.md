@@ -62,6 +62,10 @@ Force the result to be output as JSON. Without this, `jq` outputs strings verbat
 
 Read input as a string.
 
+### -c, --json
+
+Colorize JSON (--color=false to disable it)
+
 ### -v, --version
 
 Display the version and exit.
