@@ -89,9 +89,9 @@ Display the help message and exit.
 
 ## Roadmap
 
-- [ ] Tests
+- [x] Tests
 - [ ] Json-stream support
-- [ ] Optionally colorize output (while still JSON compatible)
+- [x] Optionally colorize output (while still JSON compatible)
 
 I accept pull-requests!
 
