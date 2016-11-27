@@ -15,14 +15,30 @@ if (process.stdin.isTTY) {
   process.exit(0);
 }
 
+const deps = {};
+
+if (args.require) {
+  const lazyRequire = require('lazy-require');
+  const TMP = require('os').tmpdir();
+  (_.isArray(args.require)
+    ? args.require
+    : [args.require]).reduce((deps, dep) => {
+    deps[dep] = lazyRequire(dep, {
+      cwd: TMP,
+      save: false
+    })
+    return deps;
+  }, deps);
+
+}
 process.stdin.resume().on('data', function(buf) {
   content += buf.toString();
 }).on('end', function() {
-  const sandbox = _;
-  _.console = console;
-  _.$$input$$ = args.rawInput
-    ? stripAnsi(content)
-    : JSON.parse(stripAnsi(content));
+  const sandbox = Object.assign({}, _, {
+    console: console,
+    exit: process.exit.bind(process),
+    $$input$$: args.rawInput ? stripAnsi(content) : JSON.parse(stripAnsi(content))
+  }, deps);
   const scriptStrWithPipes = args._[0];
   const scriptStr = (!scriptStrWithPipes || scriptStrWithPipes === '.'
     ? 'identity'

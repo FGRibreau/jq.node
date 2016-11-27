@@ -2,7 +2,7 @@
 
 [![Build Status](https://img.shields.io/circleci/project/FGRibreau/jq.node.svg)](https://circleci.com/gh/FGRibreau/jq.node/) ![deps](https://img.shields.io/david/fgribreau/jq.node.svg?style=flat) ![Version](https://img.shields.io/npm/v/jq.node.svg?style=flat) [![Docker hub](https://img.shields.io/docker/pulls/fgribreau/jq.node.svg)](https://hub.docker.com/r/fgribreau/jq.node/) [![available-for-advisory](https://img.shields.io/badge/available%20for%20consulting%20advisory-yes-ff69b4.svg?)](http://bit.ly/2c7uFJq) ![extra](https://img.shields.io/badge/actively%20maintained-yes-ff69b4.svg) [![Twitter Follow](https://img.shields.io/twitter/follow/fgribreau.svg?style=flat)](https://twitter.com/FGRibreau) [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/francois-guillaume-ribreau?utm_source=github&utm_medium=button&utm_term=francois-guillaume-ribreau&utm_campaign=github)  
 
-jq.node is JavaScript and Lodash in your shell. It's a powerful command-line JSON/string processor. It so easy it feels like cheating your inner-bearded-sysadmin.
+jq.node is JavaScript and Lodash in your shell (along with the 300K+ npm modules). It's a powerful command-line JSON/string processor. It so easy it feels like cheating your inner-bearded-sysadmin.
 
 ## Rational
 
@@ -14,6 +14,7 @@ I'm a huge fan of [jq](https://github.com/stedolan/jq) **but** it was so many ti
 - jq.node does not try to implement its own expression language, it's pure JavaScript
 - no need to learn new operators or helpers, if you know [lodash/fp](https://github.com/lodash/lodash/wiki/FP-Guide), you know jq.node helpers
 - more powerful than jq **will ever be** `jq 'filter(has("email")) | groupBy(u => u.email.split("@")[1]) | csv'`
+- through `--require` command option, jq.node leverages **300K+ npm modules**. Hard to do more powerful than that!
 
 ## Why jq? Why not jq.node?
 
@@ -47,6 +48,23 @@ cat users.json | jq 'filter(has("email")) | groupBy(flow(get("email"), split("@"
 
 Note: the pipe ` | ` **must always** be surrounded by space to be understood by `jq` as a pipe.
 
+## Examples
+
+### Be notified when a JSON value Changelog
+
+```
+while true; do curl -s http://10.10.0.5:9000/api/ce/task?id=AVhoYB1sNTnExzIJOq_k | jq 'property("task.status"), thru(a => exit(a === "IN_PROGRESS" ? 0 : 1))' || osascript -e 'display notification "Task done"'; sleep 5; done
+```
+
+### Open every links from the clipboard
+
+```
+pbpaste | jq -x -r opn 'split("\n") | forEach(opn)'
+```
+
+- pbpaste, echoes clipboard content, MacOS only ([use xclip or xsel in Linux](http://superuser.com/a/288333/215986))
+- [opn](https://github.com/sindresorhus/opn) is "a better node-open. Opens stuff like websites, files, executables. Cross-platform."
+
 
 ## Options
 
@@ -66,6 +84,10 @@ Read input as a string.
 
 Colorize JSON (--color=false to disable it)
 
+### -r, --require <npm-module-name>
+
+Require a NPM module `<npm-module-name>`. jq.node will automatically installs in a temporary folder it if its not available. The module will be available in the expression through its name (e.g. `lodash` for the `lodash` module)
+
 ### -v, --version
 
 Display the version and exit.
@@ -80,6 +102,7 @@ Display the help message and exit.
 
 - `templateSettings`, `after`, `ary`, `assign`, `assignIn`, `assignInWith`, `assignWith`, `at`, `before`, `bind`, `bindAll`, `bindKey`, `castArray`, `chain`, `chunk`, `compact`, `concat`, `cond`, `conforms`, `constant`, `countBy`, `create`, `curry`, `curryRight`, `debounce`, `defaults`, `defaultsDeep`, `defer`, `delay`, `difference`, `differenceBy`, `differenceWith`, `drop`, `dropRight`, `dropRightWhile`, `dropWhile`, `fill`, `filter`, `flatMap`, `flatMapDeep`, `flatMapDepth`, `flatten`, `flattenDeep`, `flattenDepth`, `flip`, `flow`, `flowRight`, `fromPairs`, `functions`, `functionsIn`, `groupBy`, `initial`, `intersection`, `intersectionBy`, `intersectionWith`, `invert`, `invertBy`, `invokeMap`, `iteratee`, `keyBy`, `keys`, `keysIn`, `map`, `mapKeys`, `mapValues`, `matches`, `matchesProperty`, `memoize`, `merge`, `mergeWith`, `method`, `methodOf`, `mixin`, `negate`, `nthArg`, `omit`, `omitBy`, `once`, `orderBy`, `over`, `overArgs`, `overEvery`, `overSome`, `partial`, `partialRight`, `partition`, `pick`, `pickBy`, `property`, `propertyOf`, `pull`, `pullAll`, `pullAllBy`, `pullAllWith`, `pullAt`, `range`, `rangeRight`, `rearg`, `reject`, `remove`, `rest`, `reverse`, `sampleSize`, `set`, `setWith`, `shuffle`, `slice`, `sortBy`, `sortedUniq`, `sortedUniqBy`, `split`, `spread`, `tail`, `take`, `takeRight`, `takeRightWhile`, `takeWhile`, `tap`, `throttle`, `thru`, `toArray`, `toPairs`, `toPairsIn`, `toPath`, `toPlainObject`, `transform`, `unary`, `union`, `unionBy`, `unionWith`, `uniq`, `uniqBy`, `uniqWith`, `unset`, `unzip`, `unzipWith`, `update`, `updateWith`, `values`, `valuesIn`, `without`, `words`, `wrap`, `xor`, `xorBy`, `xorWith`, `zip`, `zipObject`, `zipObjectDeep`, `zipWith`, `entries`, `entriesIn`, `extend`, `extendWith`, `add`, `attempt`, `camelCase`, `capitalize`, `ceil`, `clamp`, `clone`, `cloneDeep`, `cloneDeepWith`, `cloneWith`, `conformsTo`, `deburr`, `defaultTo`, `divide`, `endsWith`, `eq`, `escape`, `escapeRegExp`, `every`, `find`, `findIndex`, `findKey`, `findLast`, `findLastIndex`, `findLastKey`, `floor`, `forEach`, `forEachRight`, `forIn`, `forInRight`, `forOwn`, `forOwnRight`, `get`, `gt`, `gte`, `has`, `hasIn`, `head`, `identity`, `includes`, `indexOf`, `inRange`, `invoke`, `isArguments`, `isArray`, `isArrayBuffer`, `isArrayLike`, `isArrayLikeObject`, `isBoolean`, `isBuffer`, `isDate`, `isElement`, `isEmpty`, `isEqual`, `isEqualWith`, `isError`, `isFinite`, `isFunction`, `isInteger`, `isLength`, `isMap`, `isMatch`, `isMatchWith`, `isNaN`, `isNative`, `isNil`, `isNull`, `isNumber`, `isObject`, `isObjectLike`, `isPlainObject`, `isRegExp`, `isSafeInteger`, `isSet`, `isString`, `isSymbol`, `isTypedArray`, `isUndefined`, `isWeakMap`, `isWeakSet`, `join`, `kebabCase`, `last`, `lastIndexOf`, `lowerCase`, `lowerFirst`, `lt`, `lte`, `max`, `maxBy`, `mean`, `meanBy`, `min`, `minBy`, `stubArray`, `stubFalse`, `stubObject`, `stubString`, `stubTrue`, `multiply`, `nth`, `noConflict`, `noop`, `now`, `pad`, `padEnd`, `padStart`, `parseInt`, `random`, `reduce`, `reduceRight`, `repeat`, `replace`, `result`, `round`, `runInContext`, `sample`, `size`, `snakeCase`, `some`, `sortedIndex`, `sortedIndexBy`, `sortedIndexOf`, `sortedLastIndex`, `sortedLastIndexBy`, `sortedLastIndexOf`, `startCase`, `startsWith`, `subtract`, `sum`, `sumBy`, `template`, `times`, `toFinite`, `toInteger`, `toLength`, `toLower`, `toNumber`, `toSafeInteger`, `toString`, `toUpper`, `trim`, `trimEnd`, `trimStart`, `truncate`, `unescape`, `uniqueId`, `upperCase`, `upperFirst`, `each`, `eachRight`, `first` are exposed from [lodash/fp](https://github.com/lodash/lodash/wiki/FP-Guide).
 - `csv` is exposed from [json2csv](https://github.com/zemirco/json2csv)
+- any of 300 000+ [npm modules](https://www.npmjs.com/) through the `--require` option!
 
 
 ## Performance
@@ -95,5 +118,49 @@ Display the help message and exit.
 
 I accept pull-requests!
 
-
 ## [Changelog](/CHANGELOG.md)
+
+
+<!-- BACKERS/ -->
+
+<h2>Backers</h2>
+
+<h3>Maintainers</h3>
+
+No maintainers yet! Will you be the first?
+
+<h3>Sponsors</h3>
+
+No sponsors yet! Will you be the first?
+
+<span class="badge-patreon"><a href="http://patreon.com/fgribreau" title="Donate to this project using Patreon"><img src="https://img.shields.io/badge/patreon-donate-yellow.svg" alt="Patreon donate button" /></a></span>
+<span class="badge-gratipay"><a href="https://www.gratipay.com/fgribreau" title="Donate weekly to this project using Gratipay"><img src="https://img.shields.io/badge/gratipay-donate-yellow.svg" alt="Gratipay donate button" /></a></span>
+<span class="badge-flattr"><a href="https://flattr.com/profile/fgribreau" title="Donate to this project using Flattr"><img src="https://img.shields.io/badge/flattr-donate-yellow.svg" alt="Flattr donate button" /></a></span>
+<span class="badge-paypal"><a href="https://fgribreau.me/paypal" title="Donate to this project using Paypal"><img src="https://img.shields.io/badge/paypal-donate-yellow.svg" alt="PayPal donate button" /></a></span>
+<span class="badge-bitcoin"><a href="https://www.coinbase.com/fgribreau" title="Donate once-off to this project using Bitcoin"><img src="https://img.shields.io/badge/bitcoin-donate-yellow.svg" alt="Bitcoin donate button" /></a></span>
+
+<h3>Contributors</h3>
+
+These amazing people have contributed code to this project:
+
+<ul><li><a href="http://bit.ly/2c7uFJq">Francois-Guillaume Ribreau</a> — <a href="https://github.com/fgribreau/jq.node/commits?author=FGRibreau" title="View the GitHub contributions of Francois-Guillaume Ribreau on repository fgribreau/jq.node">view contributions</a></li>
+<li><a href="https://github.com/chocolateboy">chocolateboy</a> — <a href="https://github.com/fgribreau/jq.node/commits?author=chocolateboy" title="View the GitHub contributions of chocolateboy on repository fgribreau/jq.node">view contributions</a></li></ul>
+
+<a href="https://github.com/fgribreau/jq.node/blob/master/CONTRIBUTING.md#files">Discover how you can contribute by heading on over to the <code>CONTRIBUTING.md</code> file.</a>
+
+<!-- /BACKERS -->
+
+
+<!-- LICENSE/ -->
+
+<h2>License</h2>
+
+Unless stated otherwise all works are:
+
+<ul><li>Copyright &copy; <a href="http://fgribreau.com/">Francois-Guillaume Ribreau</a></li></ul>
+
+and licensed under:
+
+<ul><li><a href="http://spdx.org/licenses/MIT.html">MIT License</a></li></ul>
+
+<!-- /LICENSE -->

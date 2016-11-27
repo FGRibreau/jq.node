@@ -24,4 +24,14 @@ describe('jq', () => {
       t.strictEqual(run(`echo '{}' | ./jq 'console.log'`), "{}\n\n");
     });
   });
+
+  describe('require', () => {
+    it('should handle not found npm modules', () => {
+      t.strictEqual(run(`echo '{}' | ./jq --color=false -r will-never-exist-${+new Date()} ''`), '{}\n');
+    });
+
+    it('should expose a valid npm module inside the expression', () => {
+      t.strictEqual(run(`echo '20111031' | ./jq -x -r moment --color=false 'thru(a => moment(a, "YYYYMMDD"))'`), '"2011-10-30T23:00:00.000Z"\n');
+    });
+  });
 });

@@ -17,7 +17,10 @@ const argv = require('yargs')
 .boolean('color')
 .alias('C', 'color')
 .describe('color', 'Colorize JSON (--color=false to disable it)')
-.default('color', true);
+.default('color', true)
+
+.describe('require', 'require the given module')
+.alias('r', 'require');
 
 module.exports = {
   args: argv.argv,
