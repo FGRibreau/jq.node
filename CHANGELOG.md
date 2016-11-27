@@ -1,3 +1,30 @@
+<a name="0.2.0"></a>
+# 0.2.0 (2016-11-07)
+
+* Release v0.2.0. ([e3306b7](https://github.com/fgribreau/jq.node/commit/e3306b7))
+* docs(colorize): adds --color=true|false (alias -c) ([ce909d1](https://github.com/fgribreau/jq.node/commit/ce909d1))
+
+
+
+<a name="0.1.0"></a>
+# 0.1.0 (2016-11-07)
+
+* Release v0.1.0. ([464146a](https://github.com/fgribreau/jq.node/commit/464146a))
+* Update README.md ([dc8bb1d](https://github.com/fgribreau/jq.node/commit/dc8bb1d))
+* Update README.md ([7ed01a9](https://github.com/fgribreau/jq.node/commit/7ed01a9))
+* feat(colorize): colorize JSON ouput, adds --color=true|false option, adds tests ([5050a1a](https://github.com/fgribreau/jq.node/commit/5050a1a))
+
+
+
+<a name="0.0.6"></a>
+## 0.0.6 (2016-11-03)
+
+* feat(raw-input) ([8a1e442](https://github.com/fgribreau/jq.node/commit/8a1e442))
+* Release v0.0.6. ([6e71590](https://github.com/fgribreau/jq.node/commit/6e71590))
+* docs(changelog): updated ([5417d73](https://github.com/fgribreau/jq.node/commit/5417d73))
+
+
+
 <a name="0.0.5"></a>
 ## 0.0.5 (2016-11-02)
 
