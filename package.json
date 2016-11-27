@@ -19,8 +19,8 @@
     "jq.node": "./jq"
   },
   "scripts": {
-    "test": "mocha $(find . -name 'jq*.test.js')",
-    "test-watch": "mocha -w $(find . -name 'jq*.test.js')",
+    "test": "mocha -t 10000 $(find . -name 'jq*.test.js')",
+    "test-watch": "mocha -t 10000 -w $(find . -name 'jq*.test.js')",
     "test-coverage": "nyc --all --statements=100 --lines=100 --functions=90 --branches=70 --check-coverage --reporter=lcov --reporter=cobertura --report-dir=coverage -- mocha -R spec -t 100000 $(find src -name '*.test.js')",
     "send-coverage": "cat ./coverage/lcov.info | coveralls",
     "update": "updtr",
