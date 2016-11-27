@@ -1,3 +1,27 @@
+<a name="1.0.0"></a>
+# 1.0.0 (2016-11-27)
+
+* Release v1.0.0. ([97d04b0](https://github.com/fgribreau/jq.node/commit/97d04b0))
+
+
+
+<a name="0.3.0"></a>
+# 0.3.0 (2016-11-27)
+
+* docs(README) ([956a5cd](https://github.com/fgribreau/jq.node/commit/956a5cd))
+* docs(README) ([5445a04](https://github.com/fgribreau/jq.node/commit/5445a04))
+* fix(circle) ([7617b5e](https://github.com/fgribreau/jq.node/commit/7617b5e))
+* fix(package) ([734ec55](https://github.com/fgribreau/jq.node/commit/734ec55))
+* fix(package) ([b7dfa6a](https://github.com/fgribreau/jq.node/commit/b7dfa6a))
+* Release v0.3.0. ([e00abd5](https://github.com/fgribreau/jq.node/commit/e00abd5))
+* Update README.md ([a1feeaa](https://github.com/fgribreau/jq.node/commit/a1feeaa))
+* Update README.md ([4b9c804](https://github.com/fgribreau/jq.node/commit/4b9c804))
+* Update README.md ([09e3149](https://github.com/fgribreau/jq.node/commit/09e3149))
+* docs(changelog): updated ([5b4c0e8](https://github.com/fgribreau/jq.node/commit/5b4c0e8))
+* feat(require): add the --require option, brings access to up to 300K modules! ([441c735](https://github.com/fgribreau/jq.node/commit/441c735))
+
+
+
 <a name="0.2.0"></a>
 # 0.2.0 (2016-11-07)
 
