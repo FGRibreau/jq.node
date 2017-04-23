@@ -1,3 +1,15 @@
+<a name="1.0.1"></a>
+## 1.0.1 (2017-04-23)
+
+* fix(tests) ([951ace4](https://github.com/fgribreau/jq.node/commit/951ace4))
+* fix(tests) ([15e98df](https://github.com/fgribreau/jq.node/commit/15e98df))
+* Release v1.0.1. ([e089645](https://github.com/fgribreau/jq.node/commit/e089645))
+* fix(require): module names that are invalid JavaScript variable names (e.g. `js-yaml`) are now expos ([09511f0](https://github.com/fgribreau/jq.node/commit/09511f0))
+* refactor(require): use castArray instead of ternary isArray ([c18c90f](https://github.com/fgribreau/jq.node/commit/c18c90f))
+* docs(changelog): updated ([f3f8fac](https://github.com/fgribreau/jq.node/commit/f3f8fac))
+
+
+
 <a name="1.0.0"></a>
 # 1.0.0 (2016-11-27)
 
