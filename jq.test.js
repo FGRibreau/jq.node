@@ -33,5 +33,9 @@ describe('jq', () => {
     it('should expose a valid npm module inside the expression', () => {
       t.strictEqual(run(`echo '20111031' | ./jq -x -r moment --color=false 'thru(a => moment.utc(a, "YYYYMMDD"))'`), '"2011-10-31T00:00:00.000Z"\n');
     });
+
+    it('should expose a valid npm module inside the expression', () => {
+      t.strictEqual(run(`echo '- a: OK' | ./jq -x -r js-yaml --color=false 'jsYaml.safeLoad | JSON.stringify'`), '[{"a":"OK"}]\n');
+    });
   });
 });

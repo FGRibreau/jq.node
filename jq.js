@@ -21,7 +21,7 @@ if (args.require) {
   const lazyRequire = require('lazy-require');
   const TMP = require('os').tmpdir();
   _.castArray(args.require).reduce((deps, dep) => {
-    deps[dep] = lazyRequire(dep, {
+    deps[_.camelCase(dep)] = lazyRequire(dep, {
       cwd: TMP,
       save: false
     })

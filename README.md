@@ -86,7 +86,7 @@ Colorize JSON (--color=false to disable it)
 
 ### -r, --require <npm-module-name>
 
-Require a NPM module `<npm-module-name>`. jq.node will automatically installs in a temporary folder it if its not available. The module will be available in the expression through its name (e.g. `lodash` for the `lodash` module)
+Require a NPM module `<npm-module-name>`. jq.node will automatically installs in a temporary folder it if its not available. The module will be available in the expression through its name (e.g. `lodash` for the `lodash` module). Module names that are invalid JavaScript variable names (e.g. `js-yaml`) will be exposed in camel-case format (e.g. `jsYaml`).
 
 ### -v, --version
 
