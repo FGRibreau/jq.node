@@ -15,7 +15,7 @@
     ]
   },
   "bin": {
-    "jq": "./jq",
+    "jqn": "./jq",
     "jq.node": "./jq"
   },
   "scripts": {
