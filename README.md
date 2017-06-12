@@ -13,7 +13,7 @@ I'm a huge fan of [jq](https://github.com/stedolan/jq) **but** it was so many ti
 
 - jq.node does not try to implement its own expression language, it's pure JavaScript
 - no need to learn new operators or helpers, if you know [lodash/fp](https://github.com/lodash/lodash/wiki/FP-Guide), you know jq.node helpers
-- more powerful than jq **will ever be** `jq 'filter(has("email")) | groupBy(u => u.email.split("@")[1]) | csv'`
+- more powerful than jq **will ever be** `jqn 'filter(has("email")) | groupBy(u => u.email.split("@")[1]) | csv'`
 - through `--require` command option, jq.node leverages **300K+ npm modules**. Hard to do more powerful than that!
 
 ## Why jq? Why not jq.node?
@@ -37,29 +37,29 @@ npm install jq.node -g
 
 ```shell
 # the 4 commands below do the same thing
-cat users.json | jq 'filter(has("email")) | groupBy(function(u){return u.email.split("@")[1]}) | csv'
-cat users.json | jq 'filter(has("email")) | groupBy(u => u.email.split("@")[1]) | csv'
-cat users.json | jq 'filter(has("email")) | groupBy(u => get(u.email.split("@"), 1)) | csv'
-cat users.json | jq 'filter(has("email")) | groupBy(flow(get("email"), split("@"), get(1))) | csv'
+cat users.json | jqn 'filter(has("email")) | groupBy(function(u){return u.email.split("@")[1]}) | csv'
+cat users.json | jqn 'filter(has("email")) | groupBy(u => u.email.split("@")[1]) | csv'
+cat users.json | jqn 'filter(has("email")) | groupBy(u => get(u.email.split("@"), 1)) | csv'
+cat users.json | jqn 'filter(has("email")) | groupBy(flow(get("email"), split("@"), get(1))) | csv'
 ```
 
 - [Complex and tricky JSON querying made easy with jq.node](https://asciinema.org/a/91627)
 - [Editing string (to JSON) in clipboard with jq.node](https://asciinema.org/a/91472)
 
-Note: the pipe ` | ` **must always** be surrounded by space to be understood by `jq` as a pipe.
+Note: the pipe ` | ` **must always** be surrounded by space to be understood by `jqn` as a pipe.
 
 ## Examples
 
 ### Be notified when a JSON value Changelog
 
 ```
-while true; do curl -s http://10.10.0.5:9000/api/ce/task?id=AVhoYB1sNTnExzIJOq_k | jq 'property("task.status"), thru(a => exit(a === "IN_PROGRESS" ? 0 : 1))' || osascript -e 'display notification "Task done"'; sleep 5; done
+while true; do curl -s http://10.10.0.5:9000/api/ce/task?id=AVhoYB1sNTnExzIJOq_k | jqn 'property("task.status"), thru(a => exit(a === "IN_PROGRESS" ? 0 : 1))' || osascript -e 'display notification "Task done"'; sleep 5; done
 ```
 
 ### Open every links from the clipboard
 
 ```
-pbpaste | jq -x -r opn 'split("\n") | forEach(opn)'
+pbpaste | jqn -x -r opn 'split("\n") | forEach(opn)'
 ```
 
 - pbpaste, echoes clipboard content, MacOS only ([use xclip or xsel in Linux](http://superuser.com/a/288333/215986))
@@ -74,7 +74,7 @@ Display the help message and exit.
 
 ### -j, --json
 
-Force the result to be output as JSON. Without this, `jq` outputs strings verbatim and non-strings as JSON.
+Force the result to be output as JSON. Without this, `jqn` outputs strings verbatim and non-strings as JSON.
 
 ### -x, --raw-input
 
@@ -108,7 +108,7 @@ Display the help message and exit.
 ## Performance
 
 - jq      `time sh -c "cat messages.json | jq '.[].type'"`              `2ms user 0.01s system 95% cpu 0.028 total`
-- jq.node `time sh -c "cat messages.json | jq 'map(\"type\")'"`         `170ms user 0.03s system 108% cpu 0.181 total`
+- jq.node `time sh -c "cat messages.json | jqn 'map(\"type\")'"`         `170ms user 0.03s system 108% cpu 0.181 total`
 
 ## Roadmap
 
