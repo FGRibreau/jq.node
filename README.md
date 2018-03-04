@@ -50,7 +50,7 @@ Note: the pipe ` | ` **must always** be surrounded by space to be understood by 
 
 ## Examples
 
-### Be notified when a JSON value Changelog
+### Be notified when a JSON value changed
 
 ```
 while true; do curl -s http://10.10.0.5:9000/api/ce/task?id=AVhoYB1sNTnExzIJOq_k | jqn 'property("task.status"), thru(a => exit(a === "IN_PROGRESS" ? 0 : 1))' || osascript -e 'display notification "Task done"'; sleep 5; done
