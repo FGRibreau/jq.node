@@ -48,7 +48,10 @@
   "sponsors": [],
   "contributors": [
     "Francois-Guillaume Ribreau <github@fgribreau.com> (http://bit.ly/2c7uFJq)",
-    "chocolateboy <chocolate@cpan.org> (https://github.com/chocolateboy)"
+    "chocolateboy <chocolate@cpan.org> (https://github.com/chocolateboy)",
+    "Anton Ilin (https://github.com/bronislav)",
+    "Bruno Heridet (http://delapouite.com)",
+    "Thales Mello (https://github.com/thalesmello)"
   ],
   "devDependencies": {
     "chai": "^3.5.0",
