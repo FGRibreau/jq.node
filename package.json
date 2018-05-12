@@ -15,8 +15,8 @@
     ]
   },
   "bin": {
-    "jqn": "./jq",
-    "jq.node": "./jq"
+    "jqn": "./lib/cli",
+    "jq.node": "./lib/cli"
   },
   "scripts": {
     "test": "mocha -t 10000 $(find . -name 'jq*.test.js')",
