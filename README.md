@@ -33,7 +33,7 @@ npm install jq.node -g
 - [**Charts, simple as a URL**. No more server-side rendering pain, 1 url = 1 chart](https://image-charts.com)
 - [Looking for a free **Redis GUI**?](http://redsmin.com) [Or for **real-time alerting** & monitoring for Redis?](http://redsmin.com)
 
-## Usage
+## CLI Usage
 
 ```shell
 # the 4 commands below do the same thing
@@ -66,37 +66,42 @@ pbpaste | jqn -x -r opn 'split("\n") | forEach(opn)'
 - [opn](https://github.com/sindresorhus/opn) is "a better node-open. Opens stuff like websites, files, executables. Cross-platform."
 
 
+## API Usage
+
+`jq.node` exposes a node API for programmatic use. Require the `jq` function from the main module.
+
+The arguments are `jq(input, transformation, options, callback)`
+
+```js
+const { jq } = require('jq.node')
+
+jq('20111031', 'thru(a => moment.utc(a, "YYYYMMDD"))', { rawInput: true, require: 'moment' }, function (err, result) {
+  console.log(result) // "2011-10-31T00:00:00.000Z"
+})
+```
+
+or with promises and async/await, via the bluebird module:
+
+```js
+const { Promisify } = require('bluebird')
+const { jq } = Promisify(require('jq.node'))
+
+const result = await jq('20111031', 'thru(a => moment.utc(a, "YYYYMMDD"))', { rawInput: true, require: 'moment' })
+console.log(result) // "2011-10-31T00:00:00.000Z"
+```
+
 ## Options
 
-### -h, --help
+| CLI Shorthand | CLI Longhand | API Option |  Type           | Purpose                                                                                                      |
+| :---          | :---         | :---       | :---:           |                                                                                                         ---: |
+| -h            | --help       | -          | -               | Display the help message and exit.                                                                           |
+| -j            | --json       | json       | boolean         | Force the result to be output as JSON. Without this, `jqn` outputs strings verbatim and non-strings as JSON. |
+| -x            | --raw-input  | rawInput   | boolean         |                                                                                                              |
+| -c            | --color      | color      | boolean         | Colorize JSON (default true)                                                                                 |
+| -r            | --require    | require    | array(string)   | * Require a NPM module `<npm-module-name>`.                                                                  |
+| -v            | --version    | -          | -               | Display the version and exit.                                                                                |
 
-Display the help message and exit.
-
-### -j, --json
-
-Force the result to be output as JSON. Without this, `jqn` outputs strings verbatim and non-strings as JSON.
-
-### -x, --raw-input
-
-Read input as a string.
-
-### -c, --color
-
-Colorize JSON (--color=false to disable it)
-
-### -r, --require <npm-module-name>
-
-Require a NPM module `<npm-module-name>`. jq.node will automatically installs in a temporary folder it if its not available. The module will be available in the expression through its name (e.g. `lodash` for the `lodash` module). Module names that are invalid JavaScript variable names (e.g. `js-yaml`) will be exposed in camel-case format (e.g. `jsYaml`).
-
-### -v, --version
-
-Display the version and exit.
-
-## Commands
-
-### help
-
-Display the help message and exit.
+* jq.node will automatically installs in a temporary folder it if its not available. The module will be available in the expression through its name (e.g. `lodash` for the `lodash` module). Module names that are invalid JavaScript variable names (e.g. `js-yaml`) will be exposed in camel-case format (e.g. `jsYaml`).
 
 ## Currently supported
 
