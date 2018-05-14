@@ -1,3 +1,12 @@
+<a name="2.1.1"></a>
+## <small>2.1.1 (2018-05-14)</small>
+
+* fix ([1a1ce35](https://github.com/fgribreau/jq.node/commit/1a1ce35))
+* Release v2.1.1. ([bb14879](https://github.com/fgribreau/jq.node/commit/bb14879))
+* docs(changelog): updated ([74dda21](https://github.com/fgribreau/jq.node/commit/74dda21))
+
+
+
 <a name="2.1.0"></a>
 ## 2.1.0 (2018-05-14)
 
