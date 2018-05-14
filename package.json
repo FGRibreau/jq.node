@@ -27,7 +27,10 @@
     "compile": "projectz compile",
     "posttest": "npm run compile",
     "changelog": "conventional-changelog -i CHANGELOG.md -s -r 0",
-    "changelog-git": "npm run changelog && npm run compile && git add *.md && git commit -m 'docs(changelog): updated' && git push origin master"
+    "changelog-git": "npm run changelog && npm run compile && git add *.md && git commit -m 'docs(changelog): updated' && git push origin master",
+    "release:patch": "npm run test && npm-release patch && npm run changelog-git",
+    "release:minor": "npm run test && npm-release minor && npm run changelog-git",
+    "release:major": "npm run test && npm-release major && npm run changelog-git"
   },
   "main": "./lib/api.js",
   "repository": {
