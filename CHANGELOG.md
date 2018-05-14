@@ -1,5 +1,31 @@
+<a name="2.1.0"></a>
+## 2.1.0 (2018-05-14)
+
+* add api ([1c867fb](https://github.com/fgribreau/jq.node/commit/1c867fb))
+* add missing strict ([d256ed1](https://github.com/fgribreau/jq.node/commit/d256ed1))
+* Fix typo in README.md ([10baec8](https://github.com/fgribreau/jq.node/commit/10baec8))
+* make tests pass ([b6806e3](https://github.com/fgribreau/jq.node/commit/b6806e3))
+* rejig tests, docs ([7f1e2c1](https://github.com/fgribreau/jq.node/commit/7f1e2c1))
+* Release v2.1.0. ([d09b968](https://github.com/fgribreau/jq.node/commit/d09b968))
+* start to fix tests ([3e4310d](https://github.com/fgribreau/jq.node/commit/3e4310d))
+* feat: release script ([de873ea](https://github.com/fgribreau/jq.node/commit/de873ea))
+* chore: update deps ([d9af700](https://github.com/fgribreau/jq.node/commit/d9af700))
+* fix: cli was also missing ([02cf761](https://github.com/fgribreau/jq.node/commit/02cf761))
+* fix: joi was missing ([c2268fb](https://github.com/fgribreau/jq.node/commit/c2268fb))
+
+
+
+<a name="2.0.0"></a>
+## 2.0.0 (2017-06-12)
+
+* fix(changelog) ([3171b68](https://github.com/fgribreau/jq.node/commit/3171b68))
+* Release v2.0.0. ([3907ce4](https://github.com/fgribreau/jq.node/commit/3907ce4))
+* Rename binary from `jq` to `jqn` ([c97fc91](https://github.com/fgribreau/jq.node/commit/c97fc91))
+
+
+
 <a name="1.0.1"></a>
-## 1.0.1 (2017-04-23)
+## <small>1.0.1 (2017-04-23)</small>
 
 * fix(tests) ([951ace4](https://github.com/fgribreau/jq.node/commit/951ace4))
 * fix(tests) ([15e98df](https://github.com/fgribreau/jq.node/commit/15e98df))
@@ -11,14 +37,14 @@
 
 
 <a name="1.0.0"></a>
-# 1.0.0 (2016-11-27)
+## 1.0.0 (2016-11-27)
 
 * Release v1.0.0. ([97d04b0](https://github.com/fgribreau/jq.node/commit/97d04b0))
 
 
 
 <a name="0.3.0"></a>
-# 0.3.0 (2016-11-27)
+## 0.3.0 (2016-11-27)
 
 * docs(README) ([956a5cd](https://github.com/fgribreau/jq.node/commit/956a5cd))
 * docs(README) ([5445a04](https://github.com/fgribreau/jq.node/commit/5445a04))
@@ -35,7 +61,7 @@
 
 
 <a name="0.2.0"></a>
-# 0.2.0 (2016-11-07)
+## 0.2.0 (2016-11-07)
 
 * Release v0.2.0. ([e3306b7](https://github.com/fgribreau/jq.node/commit/e3306b7))
 * docs(colorize): adds --color=true|false (alias -c) ([ce909d1](https://github.com/fgribreau/jq.node/commit/ce909d1))
@@ -43,7 +69,7 @@
 
 
 <a name="0.1.0"></a>
-# 0.1.0 (2016-11-07)
+## 0.1.0 (2016-11-07)
 
 * Release v0.1.0. ([464146a](https://github.com/fgribreau/jq.node/commit/464146a))
 * Update README.md ([dc8bb1d](https://github.com/fgribreau/jq.node/commit/dc8bb1d))
@@ -53,7 +79,7 @@
 
 
 <a name="0.0.6"></a>
-## 0.0.6 (2016-11-03)
+## <small>0.0.6 (2016-11-03)</small>
 
 * feat(raw-input) ([8a1e442](https://github.com/fgribreau/jq.node/commit/8a1e442))
 * Release v0.0.6. ([6e71590](https://github.com/fgribreau/jq.node/commit/6e71590))
@@ -62,7 +88,7 @@
 
 
 <a name="0.0.5"></a>
-## 0.0.5 (2016-11-02)
+## <small>0.0.5 (2016-11-02)</small>
 
 * Release v0.0.5. ([db157db](https://github.com/fgribreau/jq.node/commit/db157db))
 * Update README.md ([ce2e977](https://github.com/fgribreau/jq.node/commit/ce2e977))
@@ -72,7 +98,7 @@
 
 
 <a name="0.0.4"></a>
-## 0.0.4 (2016-11-01)
+## <small>0.0.4 (2016-11-01)</small>
 
 * Release v0.0.4. ([33b32fc](https://github.com/fgribreau/jq.node/commit/33b32fc))
 * feat(bin): add jq.node as an alias for jq ([4749cb9](https://github.com/fgribreau/jq.node/commit/4749cb9))
@@ -80,7 +106,7 @@
 
 
 <a name="0.0.3"></a>
-## 0.0.3 (2016-11-01)
+## <small>0.0.3 (2016-11-01)</small>
 
 * add missing dependency: yargs ([9dd5f21](https://github.com/fgribreau/jq.node/commit/9dd5f21))
 * options fixes + features: ([9312562](https://github.com/fgribreau/jq.node/commit/9312562))
@@ -93,7 +119,7 @@
 
 
 <a name="0.0.2"></a>
-## 0.0.2 (2016-10-28)
+## <small>0.0.2 (2016-10-28)</small>
 
 * 🎩 ([e05d5a0](https://github.com/fgribreau/jq.node/commit/e05d5a0))
 * 🎩 ([5346bc5](https://github.com/fgribreau/jq.node/commit/5346bc5))
