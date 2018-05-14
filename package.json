@@ -15,12 +15,12 @@
     ]
   },
   "bin": {
-    "jqn": "./jq",
-    "jq.node": "./jq"
+    "jqn": "./lib/cli",
+    "jq.node": "./lib/cli"
   },
   "scripts": {
-    "test": "mocha -t 10000 $(find . -name 'jq*.test.js')",
-    "test-watch": "mocha -t 10000 -w $(find . -name 'jq*.test.js')",
+    "test": "mocha -t 10000 './lib/**.test.js'",
+    "test-watch": "mocha -t 10000 -w './lib/**.test.js'",
     "test-coverage": "nyc --all --statements=100 --lines=100 --functions=90 --branches=70 --check-coverage --reporter=lcov --reporter=cobertura --report-dir=coverage -- mocha -R spec -t 100000 $(find src -name '*.test.js')",
     "send-coverage": "cat ./coverage/lcov.info | coveralls",
     "update": "updtr",
@@ -29,7 +29,7 @@
     "changelog": "conventional-changelog -i CHANGELOG.md -s -r 0",
     "changelog-git": "npm run changelog && npm run compile && git add *.md && git commit -m 'docs(changelog): updated' && git push origin master"
   },
-  "main": "jq.js",
+  "main": "./lib/api.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/fgribreau/jq.node.git"
@@ -48,7 +48,10 @@
   "sponsors": [],
   "contributors": [
     "Francois-Guillaume Ribreau <github@fgribreau.com> (http://bit.ly/2c7uFJq)",
-    "chocolateboy <chocolate@cpan.org> (https://github.com/chocolateboy)"
+    "chocolateboy <chocolate@cpan.org> (https://github.com/chocolateboy)",
+    "Anton Ilin (https://github.com/bronislav)",
+    "Bruno Heridet (http://delapouite.com)",
+    "Thales Mello (https://github.com/thalesmello)"
   ],
   "devDependencies": {
     "chai": "^3.5.0",
