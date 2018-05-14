@@ -66,6 +66,7 @@
   },
   "dependencies": {
     "cardinal": "^1.0.0",
+    "joi": "^13.1.2",
     "json2csv": "^3.7.1",
     "lazy-require": "^2.2.0",
     "lodash": "^4.16.4",
