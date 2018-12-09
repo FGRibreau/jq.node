@@ -1,3 +1,15 @@
+<a name="2.1.2"></a>
+## <small>2.1.2 (2018-12-09)</small>
+
+* Fix incorrect variable name ([fc23177](https://github.com/fgribreau/jq.node/commit/fc23177))
+* Release v2.1.2. ([7f6c35c](https://github.com/fgribreau/jq.node/commit/7f6c35c))
+* Update README.md ([a605ddd](https://github.com/fgribreau/jq.node/commit/a605ddd))
+* doc: add backers ([3abc904](https://github.com/fgribreau/jq.node/commit/3abc904))
+* fix: add npm-release as dev-deps ([60fc7ea](https://github.com/fgribreau/jq.node/commit/60fc7ea))
+* docs(changelog): updated ([3796a61](https://github.com/fgribreau/jq.node/commit/3796a61))
+
+
+
 <a name="2.1.1"></a>
 ## <small>2.1.1 (2018-05-14)</small>
 
