@@ -24,7 +24,8 @@ These amazing people have contributed code to this project:
 <li><a href="https://github.com/chocolateboy">chocolateboy</a> — <a href="https://github.com/fgribreau/jq.node/commits?author=chocolateboy" title="View the GitHub contributions of chocolateboy on repository fgribreau/jq.node">view contributions</a></li>
 <li><a href="https://github.com/bronislav">Anton Ilin</a> — <a href="https://github.com/fgribreau/jq.node/commits?author=bronislav" title="View the GitHub contributions of Anton Ilin on repository fgribreau/jq.node">view contributions</a></li>
 <li><a href="http://delapouite.com">Bruno Heridet</a> — <a href="https://github.com/fgribreau/jq.node/commits?author=Delapouite" title="View the GitHub contributions of Bruno Heridet on repository fgribreau/jq.node">view contributions</a></li>
-<li><a href="https://github.com/thalesmello">Thales Mello</a> — <a href="https://github.com/fgribreau/jq.node/commits?author=thalesmello" title="View the GitHub contributions of Thales Mello on repository fgribreau/jq.node">view contributions</a></li></ul>
+<li><a href="https://github.com/thalesmello">Thales Mello</a> — <a href="https://github.com/fgribreau/jq.node/commits?author=thalesmello" title="View the GitHub contributions of Thales Mello on repository fgribreau/jq.node">view contributions</a></li>
+<li><a href="http://michael.mior.ca">Michael Mior</a> — <a href="https://github.com/fgribreau/jq.node/commits?author=michaelmior" title="View the GitHub contributions of Michael Mior on repository fgribreau/jq.node">view contributions</a></li></ul>
 
 <a href="https://github.com/fgribreau/jq.node/blob/master/CONTRIBUTING.md#files">Discover how you can contribute by heading on over to the <code>CONTRIBUTING.md</code> file.</a>
 
