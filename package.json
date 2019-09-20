@@ -75,7 +75,7 @@
     "json2csv": "^3.7.1",
     "lazy-require": "^2.2.0",
     "lodash": "^4.17.13",
-    "strip-ansi": "^4.0.0",
+    "strip-ansi": "^5.2.0",
     "yargs": "^11.0.0"
   },
   "badges": {
