@@ -62,7 +62,7 @@
     "conventional-changelog": "^1.1.0",
     "conventional-changelog-cli": "^1.2.0",
     "coveralls": "^3.0.0",
-    "mocha": "^5.0.0",
+    "mocha": "^6.2.0",
     "npm-release": "^1.0.0",
     "nyc": "^11.4.1",
     "projectz": "^1.3.2",
