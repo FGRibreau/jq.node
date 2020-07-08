@@ -58,25 +58,25 @@
     "Michael Mior (http://michael.mior.ca)"
   ],
   "devDependencies": {
-    "chai": "^4.1.2",
-    "conventional-changelog": "^1.1.0",
-    "conventional-changelog-cli": "^1.2.0",
-    "coveralls": "^3.0.0",
-    "mocha": "^5.0.0",
+    "chai": "^4.2.0",
+    "conventional-changelog": "^3.1.21",
+    "conventional-changelog-cli": "^2.0.34",
+    "coveralls": "^3.1.0",
+    "mocha": "^8.0.1",
     "npm-release": "^1.0.0",
-    "nyc": "^11.4.1",
-    "projectz": "^1.3.2",
-    "sinon": "^4.2.2",
+    "nyc": "^15.1.0",
+    "projectz": "^2.11.0",
+    "sinon": "^9.0.2",
     "updtr": "^3.1.0"
   },
   "dependencies": {
     "cardinal": "^2.1.1",
-    "joi": "^13.1.2",
-    "json2csv": "^3.7.1",
+    "joi": "^14.3.1",
+    "json2csv": "^5.0.1",
     "lazy-require": "^2.2.0",
-    "lodash": "^4.17.13",
-    "strip-ansi": "^4.0.0",
-    "yargs": "^11.0.0"
+    "lodash": "4.17.15",
+    "strip-ansi": "^6.0.0",
+    "yargs": "^15.4.0"
   },
   "badges": {
     "list": [
@@ -97,8 +97,13 @@
       "gratipayUsername": "fgribreau",
       "flattrUsername": "fgribreau",
       "paypalURL": "https://fgribreau.me/paypal",
-      "bitcoinURL": "https://www.coinbase.com/fgribreau"
+      "bitcoinURL": "https://www.coinbase.com/fgribreau",
+      "githubUsername": "fgribreau",
+      "githubRepository": "jq.node",
+      "githubSlug": "fgribreau/jq.node",
+      "npmPackageName": "jq.node"
     }
   },
-  "license": "MIT"
+  "license": "MIT",
+  "description": "no description was provided"
 }
