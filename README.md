@@ -2,7 +2,7 @@
 
 [![Build Status](https://img.shields.io/circleci/project/FGRibreau/jq.node.svg)](https://circleci.com/gh/FGRibreau/jq.node/) ![deps](https://img.shields.io/david/fgribreau/jq.node.svg?style=flat) ![Version](https://img.shields.io/npm/v/jq.node.svg?style=flat) [![Docker hub](https://img.shields.io/docker/pulls/fgribreau/jq.node.svg)](https://hub.docker.com/r/fgribreau/jq.node/) [![available-for-advisory](https://img.shields.io/badge/available%20for%20consulting%20advisory-yes-ff69b4.svg?)](http://bit.ly/2c7uFJq) ![extra](https://img.shields.io/badge/actively%20maintained-yes-ff69b4.svg) [![Twitter Follow](https://img.shields.io/twitter/follow/fgribreau.svg?style=flat)](https://twitter.com/FGRibreau) [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/francois-guillaume-ribreau?utm_source=github&utm_medium=button&utm_term=francois-guillaume-ribreau&utm_campaign=github)  
 
-jq.node is JavaScript and Lodash in your shell (along with the 300K+ npm modules). It's a powerful command-line JSON/string processor. It so easy it feels like cheating your inner-bearded-sysadmin.
+jq.node is JavaScript and Lodash in your shell (along with the 1.45M npm modules). It's a powerful command-line JSON/string processor. It so easy it feels like cheating your inner-bearded-sysadmin.
 
 ## Rational
 
@@ -14,7 +14,7 @@ I'm a huge fan of [jq](https://github.com/stedolan/jq) **but** it was so many ti
 - jq.node does not try to implement its own expression language, it's pure JavaScript
 - no need to learn new operators or helpers, if you know [lodash/fp](https://github.com/lodash/lodash/wiki/FP-Guide), you know jq.node helpers
 - more powerful than jq **will ever be** `jqn 'filter(has("email")) | groupBy(u => u.email.split("@")[1]) | csv'`
-- through `--require` command option, jq.node leverages **300K+ npm modules**. Hard to do more powerful than that!
+- through `--require` command option, jq.node leverages **1.45M npm modules**. Hard to do more powerful than that!
 
 ## Why jq? Why not jq.node?
 
