@@ -1,3 +1,18 @@
+## 2.3.0 (2021-02-12)
+
+* Create FUNDING.yml ([be43ea1](https://github.com/fgribreau/jq.node/commit/be43ea1))
+* Improve error handling ([2786fd4](https://github.com/fgribreau/jq.node/commit/2786fd4))
+* Release v2.3.0. ([9cd0bb5](https://github.com/fgribreau/jq.node/commit/9cd0bb5))
+* Update README.md ([6e6731b](https://github.com/fgribreau/jq.node/commit/6e6731b))
+* Update README.md ([a08990b](https://github.com/fgribreau/jq.node/commit/a08990b))
+* fix: ci ([b196af1](https://github.com/fgribreau/jq.node/commit/b196af1))
+* fix: ci ([3ee6b99](https://github.com/fgribreau/jq.node/commit/3ee6b99))
+* fix: ci ([8564b5f](https://github.com/fgribreau/jq.node/commit/8564b5f))
+* fix: ci config ([ef49eba](https://github.com/fgribreau/jq.node/commit/ef49eba))
+* docs(changelog): updated ([b2d6916](https://github.com/fgribreau/jq.node/commit/b2d6916))
+
+
+
 ## 2.2.0 (2020-07-08)
 
 * Release v2.2.0. ([aa54cd4](https://github.com/fgribreau/jq.node/commit/aa54cd4))
