@@ -1,6 +1,6 @@
 {
   "name": "jq.node",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "author": "Francois-Guillaume Ribreau <npm@fgribreau.com> (http://fgribreau.com/)",
   "engines": {
     "node": ">=6"
@@ -15,8 +15,8 @@
     ]
   },
   "bin": {
-    "jqn": "./lib/cli",
-    "jq.node": "./lib/cli"
+    "jqn": "lib/cli",
+    "jq.node": "lib/cli"
   },
   "scripts": {
     "test": "mocha -t 10000 './lib/**.test.js'",
