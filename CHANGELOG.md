@@ -1,3 +1,11 @@
+## 2.4.0 (2021-03-15)
+
+* Release v2.4.0. ([7b3de3e](https://github.com/fgribreau/jq.node/commit/7b3de3e))
+* feat: upgrade ([68eb951](https://github.com/fgribreau/jq.node/commit/68eb951))
+* docs(changelog): updated ([51ad71b](https://github.com/fgribreau/jq.node/commit/51ad71b))
+
+
+
 ## 2.3.0 (2021-02-12)
 
 * Create FUNDING.yml ([be43ea1](https://github.com/fgribreau/jq.node/commit/be43ea1))
