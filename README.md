@@ -49,15 +49,15 @@ cat users.json | jqn 'filter(has("email")) | groupBy(flow(get("email"), split("@
 
 Note: the pipe ` | ` **must always** be surrounded by space to be understood by `jqn` as a pipe.
 
-## Examples
+### Examples
 
-### Be notified when a JSON value changed
+#### Be notified when a JSON value changed
 
 ```
 while true; do curl -s http://10.10.0.5:9000/api/ce/task?id=AVhoYB1sNTnExzIJOq_k | jqn 'property("task.status"), thru(a => exit(a === "IN_PROGRESS" ? 0 : 1))' || osascript -e 'display notification "Task done"'; sleep 5; done
 ```
 
-### Open every links from the clipboard
+#### Open every links from the clipboard
 
 ```
 pbpaste | jqn -x -r opn 'split("\n") | forEach(opn)'
@@ -66,6 +66,14 @@ pbpaste | jqn -x -r opn 'split("\n") | forEach(opn)'
 - pbpaste, echoes clipboard content, MacOS only ([use xclip or xsel in Linux](http://superuser.com/a/288333/215986))
 - [opn](https://github.com/sindresorhus/opn) is "a better node-open. Opens stuff like websites, files, executables. Cross-platform."
 
+
+#### Edit a JSON file
+
+This command above rely on [tap](https://lodash.com/docs/4.17.15#tap) to add a propety to a [package.json](https://docs.npmjs.com/cli/v6/configuring-npm/package-json) file [[#89](https://github.com/FGRibreau/jq.node/issues/89)]:
+
+```
+jq.node 'tap(x => x.scripts.build= "sass --load-path=./scss ./scss/style.scss:./css/style.css")' < package.json
+```
 
 ## API Usage
 
