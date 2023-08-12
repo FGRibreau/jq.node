@@ -107,7 +107,7 @@ console.log(result) // "2011-10-31T00:00:00.000Z"
 | -h            | --help       | -          | -               | Display the help message and exit.                                                                           |
 | -j            | --json       | json       | boolean         | Force the result to be output as JSON. Without this, `jqn` outputs strings verbatim and non-strings as JSON. |
 | -x            | --raw-input  | rawInput   | boolean         |                                                                                                              |
-| -c            | --color      | color      | boolean         | Colorize JSON (default true)                                                                                 |
+| -c            | --color      | color      | boolean         | Colorize JSON (default false)                                                                                |
 | -r            | --require    | require    | array(string)   | * Require a NPM module `<npm-module-name>`.                                                                  |
 | -v            | --version    | -          | -               | Display the version and exit.                                                                                |
 
