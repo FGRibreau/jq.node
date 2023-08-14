@@ -107,11 +107,13 @@ console.log(result) // "2011-10-31T00:00:00.000Z"
 | -h            | --help       | -          | -               | Display the help message and exit.                                                                           |
 | -j            | --json       | json       | boolean         | Force the result to be output as JSON. Without this, `jqn` outputs strings verbatim and non-strings as JSON. |
 | -x            | --raw-input  | rawInput   | boolean         |                                                                                                              |
-| -c            | --color      | color      | boolean         | Colorize JSON (default true)                                                                                 |
+| -c            | --color      | color      | boolean         | Colorize JSON (default: detected via chalk/supports-color)                                                   |
 | -r            | --require    | require    | array(string)   | * Require a NPM module `<npm-module-name>`.                                                                  |
 | -v            | --version    | -          | -               | Display the version and exit.                                                                                |
 
 * jq.node will automatically installs in a temporary folder it if its not available. The module will be available in the expression through its name (e.g. `lodash` for the `lodash` module). Module names that are invalid JavaScript variable names (e.g. `js-yaml`) will be exposed in camel-case format (e.g. `jsYaml`).
+
+jq.node uses [chalk/supports-color](https://github.com/chalk/supports-color/tree/main) to detect whether or not to colorize the output. If the `--color` flag is provided, it takes precedence. This detection is disabled for programmatic API usage. For programmatic usage, an explicitly passed option takes precedence over the default (`false`).
 
 ## Currently supported
 

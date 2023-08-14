@@ -76,6 +76,7 @@
     "lazy-require": "^2.2.0",
     "lodash": "^4.17.21",
     "strip-ansi": "^6.0.0",
+    "supports-color": "^9.4.0",
     "yargs": "^16.2.0"
   },
   "badges": {
