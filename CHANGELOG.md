@@ -1,3 +1,18 @@
+## 3.0.0 (2023-08-14)
+
+* #47 - change default color behavior ([07e784c](https://github.com/fgribreau/jq.node/commit/07e784c)), closes [#47](https://github.com/fgribreau/jq.node/issues/47)
+* #47 - correct issues found in manual testing ([938baa4](https://github.com/fgribreau/jq.node/commit/938baa4)), closes [#47](https://github.com/fgribreau/jq.node/issues/47)
+* #47: implementation/tests ([0801e83](https://github.com/fgribreau/jq.node/commit/0801e83)), closes [#47](https://github.com/fgribreau/jq.node/issues/47)
+* #47: npm housekeeping ([1cc3441](https://github.com/fgribreau/jq.node/commit/1cc3441)), closes [#47](https://github.com/fgribreau/jq.node/issues/47)
+* #47: update README to describe new behavior ([3f138c1](https://github.com/fgribreau/jq.node/commit/3f138c1)), closes [#47](https://github.com/fgribreau/jq.node/issues/47)
+* Release v3.0.0. ([7b91245](https://github.com/fgribreau/jq.node/commit/7b91245))
+* Update README.md ([4fe863c](https://github.com/fgribreau/jq.node/commit/4fe863c))
+* Update README.md ([89eb2b7](https://github.com/fgribreau/jq.node/commit/89eb2b7))
+* chore: fix yargs regression ([a2bd4da](https://github.com/fgribreau/jq.node/commit/a2bd4da))
+* docs(changelog): updated ([b1da303](https://github.com/fgribreau/jq.node/commit/b1da303))
+
+
+
 ## 2.4.0 (2021-03-15)
 
 * Release v2.4.0. ([7b3de3e](https://github.com/fgribreau/jq.node/commit/7b3de3e))
