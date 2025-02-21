@@ -25,7 +25,10 @@ I'm a huge fan of [jq](https://github.com/stedolan/jq) **but** it was so many ti
 ## Install (NodeJS)
 
 ```
-npm install jq.node -g
+$ npm install jq.node -g
+
+$ echo '{"a": true}' | jqn 'o => o.a'
+true
 ```
 
 ## Shameless plug
