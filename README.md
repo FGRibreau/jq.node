@@ -4,33 +4,6 @@
 
 jq.node is JavaScript and Lodash in your shell (along with the 1.45M npm modules). It's a powerful command-line JSON/string processor. It so easy it feels like cheating your inner-bearded-sysadmin.
 
-## Rational
-
-I'm a huge fan of [jq](https://github.com/stedolan/jq) **but** it was so many times inconsistent and irritating. It sometimes felt like JavaScript but it was not.
-**jq.node** is what jq should be **in my opinion**. First version was written in 25 lines of JavaScript code and was already way more powerful than jq, backed from day one by more than 300 helpers from Lodash FP.
-
-## Why jq.node? Why not jq?
-
-- jq.node does not try to implement its own expression language, it's pure JavaScript
-- no need to learn new operators or helpers, if you know [lodash/fp](https://github.com/lodash/lodash/wiki/FP-Guide), you know jq.node helpers
-- more powerful than jq **will ever be** `jqn 'filter(has("email")) | groupBy(u => u.email.split("@")[1]) | csv'`
-- through `--require` command option, jq.node leverages **1.45M npm modules**. Hard to do more powerful than that!
-
-## Why jq? Why not jq.node?
-
-- performance matters more than feature set (in our current implementation jq is faster than jq.node, C vs JavaScript)
-- some features of jq are not currently implemented in jq.node
-- jq is a binary, jq.node is a NodeJS project (🌟 accessible through [a docker image](https://hub.docker.com/r/fgribreau/jq.node/))
-
-## Install (NodeJS)
-
-```
-$ npm install jq.node -g
-
-$ echo '{"a": true}' | jqn 'o => o.a'
-true
-```
-
 ## Sponsors
 
 <table>
@@ -58,8 +31,8 @@ true
     </td>
     <td align="center" width="175">
       <a href="https://netir.fr/?mtm_source=github&mtm_medium=sponsor&mtm_campaign=netir&mtm_content=jq.node">
-        <img src="assets/sponsors/netir.svg" height="60" alt="NetIR"/><br/>
-        <b>NetIR</b>
+        <img src="assets/sponsors/netir.svg" height="60" alt="Netir"/><br/>
+        <b>Netir</b>
       </a><br/>
       <sub>Hire vetted French freelance backend devs or join the marketplace.</sub>
     </td>
@@ -90,6 +63,33 @@ true
 </table>
 
 > **Interested in sponsoring?** [Get in touch](mailto:rust@fgribreau.com)
+
+## Rational
+
+I'm a huge fan of [jq](https://github.com/stedolan/jq) **but** it was so many times inconsistent and irritating. It sometimes felt like JavaScript but it was not.
+**jq.node** is what jq should be **in my opinion**. First version was written in 25 lines of JavaScript code and was already way more powerful than jq, backed from day one by more than 300 helpers from Lodash FP.
+
+## Why jq.node? Why not jq?
+
+- jq.node does not try to implement its own expression language, it's pure JavaScript
+- no need to learn new operators or helpers, if you know [lodash/fp](https://github.com/lodash/lodash/wiki/FP-Guide), you know jq.node helpers
+- more powerful than jq **will ever be** `jqn 'filter(has("email")) | groupBy(u => u.email.split("@")[1]) | csv'`
+- through `--require` command option, jq.node leverages **1.45M npm modules**. Hard to do more powerful than that!
+
+## Why jq? Why not jq.node?
+
+- performance matters more than feature set (in our current implementation jq is faster than jq.node, C vs JavaScript)
+- some features of jq are not currently implemented in jq.node
+- jq is a binary, jq.node is a NodeJS project (🌟 accessible through [a docker image](https://hub.docker.com/r/fgribreau/jq.node/))
+
+## Install (NodeJS)
+
+```
+$ npm install jq.node -g
+
+$ echo '{"a": true}' | jqn 'o => o.a'
+true
+```
 
 ## CLI Usage
 
